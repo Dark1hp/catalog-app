@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CatalogApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Catalog</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<style>
+		body {
+			padding-top: 70px;
+			overflow-x: hidden;
+		}
+		.animate.ng-enter,
+		.animate.ng-leave {
+			position: absolute;
+			transition: all .5s;
+			z-index: -1;
+		}
+		.animate.ng-enter.ng-enter-active {
+			top: 10%;
+		}
+		.animate.ng-enter {
+			top: 100%;
+		}
+		.animate.ng-leave.ng-leave-active {
+			margin-top: -100%;			
+		}
+		#table td {
+			vertical-align: middle;
+		}
+		@media screen and (max-width: 1200px) {
+			.animate.ng-enter,
+			.animate.ng-leave {
+				width: 80%;
+			}
+		}
+	</style>
+</head>
+<body ng-controller="CatalogCtrl">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<a href="#/" class="navbar-brand">Catalog</a>
+			<ul class="nav navbar-nav">
+				<li><a href="#/">Catalog</a></li>
+				<li><a href="#/page2">Page 2</a></li>
+				<li><a href="#/page3">Page 3</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div ng-view class="animate">
+		</div>	
+	</div>
+	
+
+	<!-- Modules -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.8/angular-route.min.js"></script>
+	<script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
+	<script src="app/scripts/ng-file-upload-all.js"></script>
+	<script src="app/scripts/ng-file-upload-shim.js"></script>
+	<script src="app/scripts/ng-file-upload.js"></script>
+
+	<!-- Controllers -->
+	<script src="app/app.js"></script>
+	<script src="app/catalog/catalog-controller.js"></script>
+	<script src="app/page2/page2-controller.js"></script>
+	<script src="app/page3/page3-controller.js"></script>
+</body>
+</html>

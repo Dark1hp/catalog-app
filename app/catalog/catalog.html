@@ -1,0 +1,29 @@
+<table class="table" id="table">
+	<thead>
+		<tr>
+			<th>Image</th>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Actions</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody id="tablebd">
+		<tr>
+			<td><button class="btn" ngf-select="" ng-model="file" name="file" ngf-pattern="'image/*'">Select File</button>
+				<img ngf-src="file" ngf-resize="{width: 100, height: 100, quality: 0.9}">
+			</td>
+			<td><input type="text" class="form-control" ng-model="catalog.id" name="preview"></td>
+			<td><input type="text" class="form-control" ng-model="catalog.name"></td>
+			<td><button class="btn btn-success" ng-click="addNote()">Add New Note</button></td>
+			<td><button class="btn btn-primary" ng-click="updateNote()">Update</button> <button class="btn btn-info" ng-click="clear()">Clear</button></td>
+		</tr>
+		<tr ng-repeat="note in list" >
+			<td><img src="{{note.path}}" alt="" width="100" height="100"></td>
+			<td>{{note.data.id}}</td>
+			<td>{{note.data.name}}</td>
+			<td><button class="btn btn-danger" ng-click="removeNote(note._id)">Delete</button></td>
+			<td><button class="btn btn-warning" ng-click="editNote(note._id)">Edit</button></td>
+		</tr>
+	</tbody>
+</table>
